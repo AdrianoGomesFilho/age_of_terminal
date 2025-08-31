@@ -17,18 +17,18 @@ class UI:
 
     def display_buildings(self, player):
         print("\n 🏰BUILDINGS:")
-        print(f" 🏛️Town Center: {player.buildings['town center']}")
-        print(f" 🛖Houses: {player.buildings['houses']}")
+        print(f" 🏛️Town Center: {player.buildings['town_center']}")
+        print(f" 🛖Houses: {player.buildings['house']}")
         print(f" ⚔️Barracks: {player.buildings['barracks']}")
-        print(f" 💱Market: {player.building['market']}")
+        print(f" 💱Market: {player.buildings['market']}")
 
     def display_units(self, player):
         population = player.get_population()
         pop_limit = player.get_population_limit()
         print(f"\n👥UNITS ({population}/{pop_limit}):")
-        print(f" 👷Villagers: {player.units['villagers']}")
-        print(f" ⚔️Soldiers: {player.units['soldiers']}")
-        print(f" 🏹Archers: {player.units['archers']}")
+        print(f" 👷Villagers: {player.units['villager']}")
+        print(f" ⚔️Soldiers: {player.units['soldier']}")
+        print(f" 🏹Archers: {player.units['archer']}")
 
     def display_menu(self):
         print("\n" + "=" * 40)

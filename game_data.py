@@ -11,5 +11,7 @@ UNIT_COSTS = {
 }
 
 UNIT_REQUIREMENTS = {
-    
+    'villager': 'town_center',
+    'soldier': 'barracks',
+    'archer': 'barracks'
 }
