@@ -5,6 +5,7 @@ from ui import UI
 from game_data import BUILDING_COSTS, UNIT_COSTS, UNIT_REQUIREMENTS
 
 class GameEngine:
+    #Unificamos os dados do jogo. O GameEngine é o cérebro
     def __init__(self):
         self.player = Player("Commander")
         self.ui = UI()
@@ -21,10 +22,13 @@ class GameEngine:
             self.ui.display_menu()
 
             choice = input("\nEnter your choice: ").strip()
+            #Limpa caracteres (espaços)
             self.handle_input(choice)
 
             if choice != 'q':
+                #A ideia é que o turno vira e os recursos serão coletados, independente da escolha, exceto se o player quiser sair (quit)
                 self.end_turn()
+
 
     def handle_input(self, choice):
         if choice == '1':
@@ -37,7 +41,7 @@ class GameEngine:
             self.view_status()
         elif choice == 'q':
             self.running = False
-            print("Until tomorrow, commander!")
+            print("Thanks for playing!")
         else:
             print("Invalid choice commander! Press Enter to continue...")
             input()
@@ -107,7 +111,6 @@ class GameEngine:
         
         input("Press Enter to continue...")
         
-    
     def view_status(self):
         print("\n📊 DETAILED STATUS")
         print(f"Commander: {self.player.name}")
@@ -129,6 +132,7 @@ class GameEngine:
 
     def end_turn(self):
         print("\nEnding turn...")
+        print("\nResources gathered!")
         self.player.collect_resources()
         self.turn +=1
-        time.sleep(1)
+        time.sleep(3)
