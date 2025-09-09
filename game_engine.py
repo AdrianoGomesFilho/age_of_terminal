@@ -6,6 +6,7 @@ from game_data import BUILDING_COSTS, UNIT_COSTS, UNIT_REQUIREMENTS
 
 class GameEngine:
     #Unificamos os dados do jogo. O GameEngine é o cérebro
+    #double underscores (dunder method): método especial), neste caso é chamado automaticamente quando o objeto é criado
     def __init__(self):
         self.player = Player("Commander")
         self.ui = UI()

@@ -12,5 +12,5 @@ def main():
 
     print("\nUntil tomorrow commander!")
 
-if __name__ == "__main__":
+if __name__ == "__main__": #Boa prática. Evita que outra instância execute, caso importe algo desse arquivo. Apesar do arquivo não ter nada útil além do próprio trigger do jogo.
     main()
