@@ -7,7 +7,7 @@ def main():
     print()
     input("Press Enter to start YOUR kingdown age")
 
-    game = GameEngine()
+    game = GameEngine() #instanciamos o cérebro, antes de rodar o jogo
     game.run()
 
     print("\nUntil tomorrow commander!")

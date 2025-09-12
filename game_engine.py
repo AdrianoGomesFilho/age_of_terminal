@@ -6,12 +6,13 @@ from game_data import BUILDING_COSTS, UNIT_COSTS, UNIT_REQUIREMENTS
 
 class GameEngine:
     #Unificamos os dados do jogo. O GameEngine é o cérebro
-    #double underscores (dunder method): método especial), neste caso é chamado automaticamente quando o objeto é criado
+    #double underscores (dunder method): método especial, neste caso é chamado automaticamente quando o objeto é criado
     def __init__(self):
         self.player = Player("Commander")
-        self.ui = UI()
+        self.ui = UI() #criaremos o objeto mas não iremos iniciar métodos via dunder method
+        #a quantidade de units, buildings etc são salvos na memória, de forma implícita
         self.turn = 1
-        self.running = True
+        self.running = True #usaremos posterirmente, permite dar quit no jogo
 
     def run(self):
         while self.running:
@@ -57,7 +58,7 @@ class GameEngine:
         choice = input ("What to build? ").strip()
 
         if choice == '1':
-            success, message = self.player.build_structure('house')
+            success, message = self.player.build_structure('house') #adicionar futuro implemento com variável success
             print(f"\n{message}")
         elif choice == '2':
             success, message = self.player.build_structure('barracks')
@@ -136,4 +137,4 @@ class GameEngine:
         print("\nResources gathered!")
         self.player.collect_resources()
         self.turn +=1
-        time.sleep(3)
+        time.sleep(2)

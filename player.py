@@ -1,6 +1,7 @@
 from game_data import BUILDING_COSTS, UNIT_COSTS, UNIT_REQUIREMENTS
 
 class Player:
+    #automaticamente vai setar essas units e buildings
     def __init__(self, name):
         self.name = name
         self.resources = {
@@ -23,7 +24,7 @@ class Player:
         self.population_limit = 10
 
     def can_afford(self, cost):
-        for resource, amount in cost.items():
+        for resource, amount in cost.items(): #o código vai iterar o dicionário de custos, no game_data em cada recurso, comparando com a quantidade que o player tem atualmente
             if self.resources[resource] < amount:
                 return False
         return True
